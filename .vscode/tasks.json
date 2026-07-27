@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C++20 Build",
+            "command": "g++",
+            "args": [
+                "-std=c++20",
+                "main.cpp", 
+                "ExpressionPlot.cpp",
+                "tinyexpr.cpp",
+                "-o",
+                "program"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

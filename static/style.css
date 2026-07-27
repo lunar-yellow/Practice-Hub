@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Tahoma, "Segoe UI", sans-serif;
+}
+
+body {
+    background: #bfc5cf;
+    color: #000;
+}
+
+.container {
+    width: 96%;
+    margin: 15px auto;
+}
+
+header {
+    background: #d6d6d6;
+    border: 1px solid #808080;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    color: #0b3d91;
+    font-size: 28px;
+}
+
+header p {
+    color: #444;
+    margin-top: 5px;
+}
+
+.content {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.left-panel {
+    width: 320px;
+    background: #e6e6e6;
+    border: 1px solid #808080;
+    padding: 15px;
+}
+
+.left-panel h2 {
+    color: #0b3d91;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #7f7f7f;
+    background: white;
+    color: black;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #0047ab;
+}
+
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    background: #dcdcdc;
+    border: 1px solid #808080;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #c7c7c7;
+}
+
+button:active {
+    background: #b5b5b5;
+}
+
+hr {
+    margin: 20px 0;
+    border: 1px solid #999;
+}
+
+/* panou dreapta si grafic */
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* spatiu intre grafic si tabel */
+    min-width: 0; /* previne overflow */
+}
+
+.graph {
+    background: #e6e6e6;
+    border: 1px solid #808080;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph h2 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+/* container ca sa tina Chart.js sub control */
+.chart-container {
+    position: relative;
+    height: 400px; /*  inaltimea graficului */
+    width: 100%;
+}
+
+canvas {
+    background: #101010;
+    border: 2px solid #666;
+    
+}
+.results {
+    background: #e6e6e6;
+    border: 1px solid #808080;
+    padding: 15px;
+}
+
+.results h2 {
+    color: #0b3d91;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: #c8d5ec;
+    border: 1px solid #808080;
+    padding: 8px;
+    text-align: center;
+}
+
+td {
+    border: 1px solid #a0a0a0;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+tr:hover {
+    background: #d9e6ff;
+}
+
+@media(max-width: 900px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        width: 100%;
+    }
+}
