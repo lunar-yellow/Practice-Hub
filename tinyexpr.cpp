@@ -200,7 +200,7 @@ namespace te_builtins
         {
         // clang-format off
         return (!std::isfinite(val1) && !std::isfinite(val2)) ?
-            te_parser::te_nan :
+            te_parser::te_nan : 
             static_cast<te_type>(
                 (te_parser::number_to_bool(val1) || te_parser::number_to_bool(val2)) ? 1 : 0);
         // clang-format on

@@ -11,7 +11,7 @@
                 "ExpressionPlot.cpp",
                 "tinyexpr.cpp",
                 "-o",
-                "program"
+                "program" 
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

@@ -4,4 +4,4 @@ struct ExpressionPoint
 {
     double time;
     double value;
-};
+}; 

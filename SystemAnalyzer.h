@@ -19,7 +19,7 @@ private:
         vector<double> result;
         stringstream ss(str);
         double val;
-        while (ss >> val) {
+        while (ss >> val) { 
             result.push_back(val);
         }
         return result;

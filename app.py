@@ -36,7 +36,7 @@ def process():
         # pentru analiza functiei de transfer
         elif action == 'analyze':
             numarator = str(data.get('numarator', '')).strip()
-            numitor = str(data.get('numitor', '')).strip()
+            numitor = str(data.get('numitor', '')).strip() 
 
             if not numarator or not numitor:
                 return jsonify({'success': False, 'error': 'Introdu numărătorul și numitorul!'})

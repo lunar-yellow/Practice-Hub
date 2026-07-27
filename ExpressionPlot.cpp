@@ -44,7 +44,7 @@ std::vector<ExpressionPoint> ExpressionPlot::Generate()
         points.push_back({
             t,
             y
-        });
+        }); 
     }
 
     return points;

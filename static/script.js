@@ -30,7 +30,7 @@ document.getElementById("generate").addEventListener("click", async () => {
 
         const points = data.signal.map(p => ({
             x: p.time,
-            y: p.value
+            y: p.value 
         }));
 
         DrawChart(points);

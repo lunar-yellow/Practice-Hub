@@ -19,4 +19,4 @@ public:
     );
 
     std::vector<ExpressionPoint> Generate();
-};
+}; 
