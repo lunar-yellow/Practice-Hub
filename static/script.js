@@ -54,7 +54,7 @@ function DrawChart(points) {
         type: "line",
         data: {
             datasets: [
-                {
+                {//hover pentru cursor
                     label: "Semnal",
                     data: points,
                     parsing: true,

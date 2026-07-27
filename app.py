@@ -55,4 +55,4 @@ def process():
         return jsonify({'success': False, 'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True) #imi deschide serverul local pe web
+    app.run(debug=True) #imi deschide serverul local pe web pentru testare

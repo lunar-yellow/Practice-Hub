@@ -14,7 +14,7 @@ private:
     vector<double> numarator;
     vector<double> numitor;
 
-    // Transforma string-ul primit (ex "1 0 3") intr-un vector de numere
+    // transformare string primit ex: 1 2 in vector
     vector<double> parseVector(const string& str) {
         vector<double> result;
         stringstream ss(str);
@@ -41,7 +41,7 @@ public:
         string poliStr = "-";
         string zerouriStr = "-";
 
-        // 1. Calcul Poli - Gradul 2 (ex: 1 0 3 -> a=1, b=0, c=3)
+        // calcul poli grad 2
         if (numitor.size() == 3) {
             double a = numitor[0], b = numitor[1], c = numitor[2];
             complex<double> delta = b * b - 4.0 * a * c;
@@ -49,7 +49,7 @@ public:
             complex<double> p1 = (-b + sqrt(delta)) / (2.0 * a);
             complex<double> p2 = (-b - sqrt(delta)) / (2.0 * a);
 
-            // Verificare simpla: doar Stabil sau Instabil
+            // verificare stabilitate
             if (p1.real() < 0 || p2.real() < 0) {
                 stabilitate = "Sistem instabil";
             } 
@@ -57,13 +57,13 @@ public:
                 stabilitate = "Sistem stabil";
             }
 
-            // Formatam polii ca string
+            // formatare ca string
             stringstream ss;
             ss << p1.real() << (p1.imag() >= 0 ? "+" : "") << p1.imag() << "j, "
                << p2.real() << (p2.imag() >= 0 ? "+" : "") << p2.imag() << "j";
             poliStr = ss.str();
         } 
-        // 2. Calcul Poli - Gradul 1 (ex: 1 2 -> a=1, b=2)
+        // calcul poli grad 1
         else if (numitor.size() == 2) {
             double a = numitor[0], b = numitor[1];
             double p1 = -b / a;
@@ -80,7 +80,7 @@ public:
             poliStr = ss.str();
         }
 
-        // 3. Calcul Zerouri (pentru numarator de gradul 1)
+        //calcul zerouri gradul 1(grad maxim)
         if (numarator.size() == 2) {
             double z1 = -numarator[1] / numarator[0];
             stringstream ss;
@@ -88,7 +88,7 @@ public:
             zerouriStr = ss.str();
         }
 
-        // 4. Afisare JSON
+       
         cout << "{";
         cout << "\"stabilitate\":\"" << stabilitate << "\",";
         cout << "\"poli\":\"" << poliStr << "\",";

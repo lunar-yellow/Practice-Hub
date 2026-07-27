@@ -21,7 +21,7 @@ std::vector<ExpressionPoint> ExpressionPlot::Generate()
     te_parser convert;
 
     double t = 0;
-
+//imi converteste expresia introdusa dintr un string intr o expresie valida cu ajutorul a tinyexpr.h
     convert.set_variables_and_functions({
         te_variable{"t", &t},
         te_variable{"pi", M_PI}
