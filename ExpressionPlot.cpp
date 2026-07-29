@@ -18,6 +18,11 @@ std::vector<ExpressionPoint> ExpressionPlot::Generate()
 {
     std::vector<ExpressionPoint> points;
 
+    // protectie impotriva unui crash al aplicatiei cand val pasului este ft mare si exista ft multe puncte de calculat
+if (step <= 0 || step < 1e-5 || step > duration)
+{
+    return points; 
+}
     te_parser convert;
 
     double t = 0;
@@ -34,6 +39,8 @@ std::vector<ExpressionPoint> ExpressionPlot::Generate()
         return points;
     }
 
+    //nu putem implementa cu std::for_each in acest caz din cauza ca acesta lucreaza doar cu adrese ale unor 
+    //elemente existente din memorie iar aici punctele inca nu au fost calculate
     for (t = 0; t <= duration; t += step)
     {
         double y = convert.evaluate();

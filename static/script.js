@@ -8,13 +8,12 @@ document.getElementById("generate").addEventListener("click", async () => {
     const duration = parseFloat(document.getElementById("duration").value);
 
     try {
-        const response = await fetch("/process", {
+        const response = await fetch("/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                type: "generate",
                 expression: expression,
                 step: step,
                 duration: duration
@@ -48,7 +47,7 @@ function DrawChart(points) {
         chart.destroy();
     }
 
-    const signalColor = "#c87aff";
+    const signalColor = "#e5c1fe";
 
     chart = new Chart(ctx, {
         type: "line",
@@ -152,13 +151,12 @@ document.getElementById('analyze').addEventListener('click', async () => {
     }
 
     try {
-        const response = await fetch('/process', {
+        const response = await fetch('/analyze', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ 
-                type: "analyze",
                 numarator: numarator, 
                 numitor: numitor 
             })
